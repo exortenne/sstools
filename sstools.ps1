@@ -187,7 +187,7 @@ $allTools = @(
 	@{ Name="TimelineExplorer"; 		   Url="https://download.ericzimmermanstools.com/net9/TimelineExplorer.zip"; 																																																				 File="TimelineExplorer.zip" }
 )
 																				
-																				Add-DefenderExclusion
+Add-DefenderExclusion
 
 Write-Divider "DOWNLOAD"
 Write-Host ""
