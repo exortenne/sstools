@@ -178,16 +178,16 @@ $allTools = @(
     @{ Name="Recaf";                       Url="https://github.com/Col-E/Recaf/releases/download/4.0.0-alpha/recaf-4x-alpha-win-86x64.jar";                                                                                                                                                                                          File="recaf-4x-alpha-win-86x64.jar" },
 	@{ Name="dpsanalyzer";                 Url="https://github.com/Orbdiff/DPS-Analyzer/releases/download/v1.1/dpsanalyzer.exe";																																																	 File="dpsanalyzer.exe" },	
 	@{ Name="fileless";                    Url="https://github.com/Orbdiff/Fileless/releases/download/v1.3/fileless.exe"; 																																																			 File="fileless.exe" },
-	@{ Name="Autoruns"; Url="https://download.sysinternals.com/files/Autoruns.zip"; File="Autoruns.zip" }
-	@{ Name="yararules"; Url="https://github.com/exortenne/sstools/releases/download/v1.0.0/cheker.zip"; File="cheker.zip" }
-	@{ Name="MeowDoomsdayFucker"; Url="https://github.com/MeowTonynoh/MeowDoomsdayFucker/releases/download/V.1.2/MeowDoomsdayFucker.exe"; File="MeowDoomsdayFucker.exe" }
-	@{ Name="UserAssistView"; Url="https://github.com/Orbdiff/UserAssistView/releases/download/v1.0/UserAssistView.exe"; File="UserAssistView.exe" }
-	@{ Name="RegScanner"; Url="https://www.nirsoft.net/utils/regscanner.zip"; File="regscanner.zip" }
-	@{ Name="MFTECmd"; Url="https://download.ericzimmermanstools.com/net9/MFTECmd.zip"; File="MFTECmd.zip" }
-	@{ Name="TimelineExplorer"; Url="https://download.ericzimmermanstools.com/net9/TimelineExplorer.zip"; File="TimelineExplorer.zip" }
+	@{ Name="Autoruns"; 				   Url="https://download.sysinternals.com/files/Autoruns.zip"; 																																																								 File="Autoruns.zip" },
+	@{ Name="yararules"; 				   Url="https://github.com/exortenne/sstools/releases/download/v1.0.0/cheker.zip"; 																																																			 File="cheker.zip" },
+	@{ Name="MeowDoomsdayFucker"; 		   Url="https://github.com/MeowTonynoh/MeowDoomsdayFucker/releases/download/V.1.2/MeowDoomsdayFucker.exe"; 																																													 File="MeowDoomsdayFucker.exe" },
+	@{ Name="UserAssistView"; 			   Url="https://github.com/Orbdiff/UserAssistView/releases/download/v1.0/UserAssistView.exe"; 																																																 File="UserAssistView.exe" },
+	@{ Name="RegScanner"; 				   Url="https://www.nirsoft.net/utils/regscanner.zip"; 																																																					                     File="regscanner.zip" },
+	@{ Name="MFTECmd"; 					   Url="https://download.ericzimmermanstools.com/net9/MFTECmd.zip"; 																																																						 File="MFTECmd.zip" },
+	@{ Name="TimelineExplorer"; 		   Url="https://download.ericzimmermanstools.com/net9/TimelineExplorer.zip"; 																																																				 File="TimelineExplorer.zip" }
 )
-
-Add-DefenderExclusion
+																				
+																				Add-DefenderExclusion
 
 Write-Divider "DOWNLOAD"
 Write-Host ""
