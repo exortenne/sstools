@@ -184,7 +184,7 @@ $allTools = @(
 	@{ Name="UserAssistView"; Url="https://github.com/Orbdiff/UserAssistView/releases/download/v1.0/UserAssistView.exe"; File="UserAssistView.exe" }
 	@{ Name="RegScanner"; Url="https://www.nirsoft.net/utils/regscanner.zip"; File="regscanner.zip" }
 	@{ Name="MFTECmd"; Url="https://download.ericzimmermanstools.com/net9/MFTECmd.zip"; File="MFTECmd.zip" }
-	@{ Name="TimelineExplorer"; Url="https://download.ericzimmermanstools.com/net9/TimelineExplorer.zip"; File="TimelineExplorer.zip" },
+	@{ Name="TimelineExplorer"; Url="https://download.ericzimmermanstools.com/net9/TimelineExplorer.zip"; File="TimelineExplorer.zip" }
 )
 
 Add-DefenderExclusion
