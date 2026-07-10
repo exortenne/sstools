@@ -1,5 +1,5 @@
 # ============================================================
-#   AcousticVoid Suite
+#   Нюдсы 11 классниц бесплатно
 #   1. System Checker
 #   2. Void Mod Analyzer
 #   3. Command History Analyzer
@@ -33,7 +33,7 @@ $verdictFlags    = [System.Collections.Generic.List[string]]::new()
 $verdictWarnings = [System.Collections.Generic.List[string]]::new()
 
 Clear-Host
-Write-Host "by AcousticVoid" -ForegroundColor Cyan
+Write-Host "сосать байпасеры by exortenne" -ForegroundColor Cyan
 Write-Host ""
 
 # -- Boot time ------------------------------------------------
@@ -98,7 +98,7 @@ foreach ($svc in $services) {
             if ($displayName.Length -gt 40) {
                 $displayName = $displayName.Substring(0, 37) + "..."
             }
-            Write-Host ("  {0,-12} {1,-40}" -f $svc.Name, $displayName) -ForegroundColor Green -NoNewline
+            Write-Host ("  {0,-12} {1,-40}" -f $svc.Name, $displayName) -ForegroundColor Magenta -NoNewline
             
             if ($svc.Name -eq "Bam") {
                 Write-Host " | Enabled" -ForegroundColor Yellow
@@ -132,7 +132,7 @@ foreach ($svc in $services) {
 }
 
 # -- Registry --------------------------------------------------
-Write-Host "`nREGISTRY" -ForegroundColor Magenta
+Write-Host "`nREGISTRY" -ForegroundColor Cyan
 
 $regSettings = @(
     @{ Name = "CMD";               Path = "HKCU:\Software\Policies\Microsoft\Windows\System";                               Key = "DisableCMD";                Warning = "Disabled"; Safe = "Available" },
@@ -193,7 +193,7 @@ function Check-DeviceDeleted {
 }
 
 # -- Event logs ------------------------------------------------
-Write-Host "`nEVENT LOGS" -ForegroundColor Magenta
+Write-Host "`nEVENT LOGS" -ForegroundColor Cyan
 Check-EventLog      "Application" 3079          "USN Journal cleared"
 Check-RecentEventLog "System"     @(104, 1102)  "Event Logs cleared"
 Check-EventLog      "System"      1074           "Last PC Shutdown"
@@ -204,7 +204,7 @@ Check-DeviceDeleted
 # -- Prefetch integrity ----------------------------------------
 $prefetchPath = "$env:SystemRoot\Prefetch"
 if (Test-Path $prefetchPath) {
-    Write-Host "`nPREFETCH INTEGRITY" -ForegroundColor Magenta
+    Write-Host "`nPREFETCH INTEGRITY" -ForegroundColor Cyan
 
     $files = Get-ChildItem -Path $prefetchPath -Filter *.pf -Force -ErrorAction SilentlyContinue
     if (-not $files) {
@@ -283,7 +283,7 @@ if (Test-Path $prefetchPath) {
 # -- Recycle Bin + Console History -------------------------------
 try {
     $recycleBinPath = "$env:SystemDrive" + '\$Recycle.Bin'
-    Write-Host "`nRECYCLE BIN" -ForegroundColor Magenta
+    Write-Host "`nRECYCLE BIN" -ForegroundColor Cyan
 
     if (Test-Path $recycleBinPath) {
         $recycleBinFolder = Get-Item -LiteralPath $recycleBinPath -Force
@@ -353,7 +353,7 @@ try {
 }
 
 # -- USB history -----------------------------------------------
-Write-Host "`nUSB HISTORY" -ForegroundColor Magenta
+Write-Host "`nUSB HISTORY" -ForegroundColor Cyan
 try {
     $usbRegPath = "HKLM:\SYSTEM\CurrentControlSet\Enum\USBSTOR"
     if (Test-Path $usbRegPath) {
@@ -396,7 +396,7 @@ try {
 }
 
 # -- Logged-on users --------------------------------------------
-Write-Host "`nLOGGED-ON USERS" -ForegroundColor Magenta
+Write-Host "`nLOGGED-ON USERS" -ForegroundColor Cyan
 try {
     $sessions = Get-CimInstance -ClassName Win32_LogonSession -ErrorAction SilentlyContinue |
                 Where-Object { $_.LogonType -in @(2, 10, 11) }  # Interactive, RemoteInteractive, CachedInteractive
@@ -479,7 +479,7 @@ try {
 }
 
 # -- Windows Defender real-time protection --------------------
-Write-Host "`nWINDOWS DEFENDER" -ForegroundColor Magenta
+Write-Host "`nWINDOWS DEFENDER" -ForegroundColor Cyan
 try {
     $defenderKey  = "HKLM:\SOFTWARE\Microsoft\Windows Defender\Real-Time Protection"
     $defenderPol  = "HKLM:\SOFTWARE\Policies\Microsoft\Windows Defender\Real-Time Protection"
@@ -514,7 +514,7 @@ try {
 }
 
 # -- BAM entries linked to javaw.exe ---------------------------
-Write-Host "`nBAM - EXECUTABLES LINKED TO MINECRAFT SESSION" -ForegroundColor Magenta
+Write-Host "`nBAM - EXECUTABLES LINKED TO MINECRAFT SESSION" -ForegroundColor Cyan
 try {
     $mcProc2 = Get-Process javaw -ErrorAction SilentlyContinue
     if (-not $mcProc2) { $mcProc2 = Get-Process java -ErrorAction SilentlyContinue }
@@ -1521,16 +1521,12 @@ Write-Host ""
 Write-Host "  Analysis complete! " -ForegroundColor Magenta
 Write-Host ""
 Write-Host "  Created by: "  -ForegroundColor White    -NoNewline
-Write-Host "AcousticVoid"    -ForegroundColor Magenta
+Write-Host "exortenne"    -ForegroundColor Magenta
 Write-Host "  My Socials: "  -ForegroundColor White    -NoNewline
 Write-Host "Discord  : "     -ForegroundColor Magenta  -NoNewline
-Write-Host "piespeas"        -ForegroundColor Magenta
-Write-Host "                 " -NoNewline
-Write-Host "GitHub   : "     -ForegroundColor Gray -NoNewline
-Write-Host "https://piespeas.github.io/" -ForegroundColor White
-Write-Host "                 " -NoNewline
-Write-Host "YouTube  : "     -ForegroundColor Magenta -NoNewline
-Write-Host "AcousticVoid"    -ForegroundColor Magenta
+Write-Host "хуй вам"        -ForegroundColor Magenta
+Write-Host "  GitHub   : "     -ForegroundColor Gray -NoNewline
+Write-Host "https://github.com/exortenne/" -ForegroundColor White
 Write-Host ""
 Write-Host ("=" * 76) -ForegroundColor Gray
 Write-Host ""
@@ -1557,10 +1553,10 @@ Checking command history since Minecraft launch...
 
 Write-Host $Banner -ForegroundColor Cyan
 Write-Host ""
-Write-Host "                love yall " -ForegroundColor Gray -NoNewline
+Write-Host "                hate bypass " -ForegroundColor Gray -NoNewline
 Write-Host "<3 "           -ForegroundColor Magenta -NoNewline
 Write-Host "by "           -ForegroundColor Gray -NoNewline
-Write-Host "AcousticVoid"  -ForegroundColor Magenta
+Write-Host "exortenne"  -ForegroundColor Magenta
 Write-Host ""
 Write-Host ("=" * 76) -ForegroundColor Gray
 Write-Host ""
@@ -1937,16 +1933,12 @@ Write-Host ""
 Write-Host "  Complete analysis finished! " -ForegroundColor Magenta
 Write-Host ""
 Write-Host "  Created by: "  -ForegroundColor White    -NoNewline
-Write-Host "AcousticVoid"    -ForegroundColor Magenta
+Write-Host "exortenne"    -ForegroundColor Magenta
 Write-Host "  My Socials: "  -ForegroundColor White    -NoNewline
-Write-Host "Discord  : "     -ForegroundColor Magenta  -NoNewline
-Write-Host "piespeas"        -ForegroundColor Magenta
-Write-Host "                 " -NoNewline
-Write-Host "GitHub   : "     -ForegroundColor Gray -NoNewline
-Write-Host "https://piespeas.github.io/" -ForegroundColor White
-Write-Host "                 " -NoNewline
-Write-Host "YouTube  : "     -ForegroundColor Magenta -NoNewline
-Write-Host "AcousticVoid"    -ForegroundColor Magenta
+Write-Host "Discord: "     -ForegroundColor Magenta  -NoNewline
+Write-Host "хуй вам"        -ForegroundColor Magenta
+Write-Host "  GitHub: "     -ForegroundColor Gray -NoNewline
+Write-Host "https://github.com/exortenne" -ForegroundColor White
 Write-Host ""
 Write-Host ("=" * 76) -ForegroundColor Gray
 Write-Host ""
@@ -1955,7 +1947,7 @@ Write-Host "All analysis complete. Results displayed above." -ForegroundColor Gr
 Write-Host "Press any key to exit..." -ForegroundColor Gray
 $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
 Write-Host ""
-Write-Host "AcousticVoid owns all cheaters, the undeniable daddy of every last one of them, standing above the rest as the king who dominates the entire scene, the god-tier presence that overshadows anyone trying to compete — every cheater falls under AcousticVoid’s rule, outclassed, outplayed, and completely controlled, with no exceptions, no rivals, and no one even close to touching that level of supremacy."              -ForegroundColor Magenta
+Write-Host "exortenne owns all cheaters, the undeniable daddy of every last one of them, standing above the rest as the king who dominates the entire scene, the god-tier presence that overshadows anyone trying to compete — every cheater falls under exortenne’s rule, outclassed, outplayed, and completely controlled, with no exceptions, no rivals, and no one even close to touching that level of supremacy."              -ForegroundColor Magenta
 
 
 # ============================================================
