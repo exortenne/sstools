@@ -33,7 +33,7 @@ $verdictFlags    = [System.Collections.Generic.List[string]]::new()
 $verdictWarnings = [System.Collections.Generic.List[string]]::new()
 
 Clear-Host
-Write-Host "сосать байпасеры by exortenne" -ForegroundColor Cyan
+Write-Host "i'm so lonely, by exortenne" -ForegroundColor Cyan
 Write-Host ""
 
 # -- Boot time ------------------------------------------------
