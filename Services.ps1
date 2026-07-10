@@ -86,8 +86,8 @@ $services = @(
     @{Name = "DcomLaunch"; DisplayName = "DCOM Server Process Launcher"},
     @{Name = "PlugPlay"; DisplayName = "Plug and Play"},
     @{Name = "wsearch"; DisplayName = "Windows Search"},
-	@{Name = "DiagTrack"; DisplayName = "Connected User Experiences and Telemetry"},
-	@{Name = "Power"; DisplayName = "Power"}
+    @{Name = "DiagTrack"; DisplayName = "Connected User Experiences and Telemetry"},
+    @{Name = "Power"; DisplayName = "Power"}
 )
 
 foreach ($svc in $services) {
@@ -95,9 +95,11 @@ foreach ($svc in $services) {
     if ($service) {
         if ($service.Status -eq "Running") {
             $displayName = $service.DisplayName
-            if ($displayName.Length -gt 40) { $displayName = $displayName.Substring(0, 37) + "..." }
-            Write-Host ("  {0,-25} {1}" -f $svc.DisplayName, $service.Status) -ForegroundColor Magenta -NoNewline
-
+            if ($displayName.Length -gt 40) {
+                $displayName = $displayName.Substring(0, 37) + "..."
+            }
+            Write-Host ("  {0,-12} {1,-40}" -f $svc.Name, $displayName) -ForegroundColor Green -NoNewline
+            
             if ($svc.Name -eq "Bam") {
                 Write-Host " | Enabled" -ForegroundColor Yellow
             } else {
@@ -105,8 +107,11 @@ foreach ($svc in $services) {
                     $process = Get-CimInstance Win32_Service -Filter "Name='$($svc.Name)'" | Select-Object ProcessId
                     if ($process.ProcessId -gt 0) {
                         $proc = Get-Process -Id $process.ProcessId -ErrorAction SilentlyContinue
-                        if ($proc) { Write-Host (" | {0}" -f $proc.StartTime.ToString("HH:mm:ss")) -ForegroundColor Yellow }
-                        else       { Write-Host " | N/A" -ForegroundColor Yellow }
+                        if ($proc) {
+                            Write-Host (" | {0}" -f $proc.StartTime.ToString("HH:mm:ss")) -ForegroundColor Yellow
+                        } else {
+                            Write-Host " | N/A" -ForegroundColor Yellow
+                        }
                     } else {
                         Write-Host " | N/A" -ForegroundColor Yellow
                     }
@@ -116,11 +121,13 @@ foreach ($svc in $services) {
             }
         } else {
             $displayName = $service.DisplayName
-            if ($displayName.Length -gt 40) { $displayName = $displayName.Substring(0, 37) + "..." }
+            if ($displayName.Length -gt 40) {
+                $displayName = $displayName.Substring(0, 37) + "..."
+            }
             Write-Host ("  {0,-12} {1,-40} {2}" -f $svc.Name, $displayName, $service.Status) -ForegroundColor Red
         }
     } else {
-        Write-Host ("  {0,-12} {1,-40} {2}" -f $svc.Name, "Not Found", "Stopped") -ForegroundColor Gray
+        Write-Host ("  {0,-12} {1,-40} {2}" -f $svc.Name, "Not Found", "Stopped") -ForegroundColor Yellow
     }
 }
 
@@ -875,10 +882,10 @@ I have aura
 
 Write-Host $Banner -ForegroundColor Magenta
 Write-Host ""
-Write-Host "                love yall " -ForegroundColor Gray -NoNewline
+Write-Host "                hate bypass " -ForegroundColor Gray -NoNewline
 Write-Host "<3 "           -ForegroundColor Magenta -NoNewline
 Write-Host "by "           -ForegroundColor Gray -NoNewline
-Write-Host "AcousticVoid"  -ForegroundColor Magenta
+Write-Host "exortenne"  -ForegroundColor Magenta
 Write-Host ""
 Write-Host ("=" * 76) -ForegroundColor Gray
 Write-Host
